@@ -12,5 +12,6 @@ router.post("/",categoriaController.postCategorias);// create
 //ruta que recibe un parametro id 
 router.get("/:id", categoriaController.getCategory); //para crud - read sola fila
 router.delete("/:id", categoriaController.deleteCategory);//delete 
+router.put("/:id", categoriaController.updateCategorias);//update
 //exportamos para que sea disponible en api
 export default router;
