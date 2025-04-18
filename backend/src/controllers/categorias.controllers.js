@@ -1,6 +1,6 @@
 import getConection from "../db/database.js"
 
-/*Consulta */
+/*Consulta  por table */
 const getCategorias = async (req,res)=>{
     try {
         const conenection = await getConection();
@@ -12,7 +12,7 @@ const getCategorias = async (req,res)=>{
     
 }
 
-/* Insert */
+/* Insert valores  */
 const postCategorias= async (req,res)=>{
     try {
          const {CategoriaNombre,Descripcion,Imagen} = req.body;
