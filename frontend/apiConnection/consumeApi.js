@@ -12,3 +12,13 @@ export const obtainCategories = async ()=>{
         console.error("Error");
     }
 }
+
+export const obtainEmpleados = async ()=>{
+    try {
+        const resultado =  await fetch(url)
+        const empleados =  await resultado.json();
+        return empleados
+    } catch (error) {
+        console.error("Error");
+    }
+}

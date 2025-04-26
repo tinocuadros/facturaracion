@@ -3,8 +3,8 @@ import getConection from "../db/database.js"
 /*Consulta  por table */
 const getCategorias = async (req,res)=>{
     try {
-        const conenection = await getConection();
-    const result = await conenection.query("SELECT CategoriaID, CategoriaNombre, Descripcion,Imagen FROM categorias ")
+        const connection = await getConection();
+    const result = await connection.query("SELECT CategoriaID, CategoriaNombre, Descripcion,Imagen FROM categorias ")
     res.json(result);
     } catch (error) {
         console.error("Error 500");
@@ -35,7 +35,7 @@ const getCategory = async (req, res)=>{
     console.log(req.params);
     const{id} = req.params
 
-    const conenection = await getConection();
+    const connection = await getConection();
     const result = await conenection.query("SELECT CategoriaID, CategoriaNombre, Descripcion, Imagen FROM categorias WHERE  CategoriaID = ?",id)
     res.json(result);
 
@@ -51,8 +51,8 @@ const deleteCategory = async (req, res)=>{
     try {
     console.log("id de categoria a borrar: ",req.params);
     const{id} = req.params
-    const conenection = await getConection();
-    const result = await conenection.query("DELETE FROM Categorias  WHERE  CategoriaID = ?",id)
+    const connection = await getConection();
+    const result = await connection.query("DELETE FROM Categorias  WHERE  CategoriaID = ?",id)
     res.json(result);
 
     } catch (error) {
