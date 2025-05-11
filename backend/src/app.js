@@ -20,6 +20,11 @@ app.use(express.json());
 app.use(cors());
 //router
 app.use("/api/categorias",categoriaRoutes)
+
+app.get('/',(req,res)=>{
+res.send('REST API EN RENDER DATABASE')
+})
+
 app.use("/api/empleados",empleadoRoutes)
 app.use("/api/clientes",clientesRoutes)
 app.use("/api/productos",productoRoutes)
